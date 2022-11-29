@@ -1,4 +1,8 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+
 
 namespace SG
 {
@@ -45,7 +49,9 @@ namespace SG
         /// <summary> Returns true if this gesture is currently being made. Input.GetKey() equivalent. </summary>
         public bool IsGesturing
         {
+            
             get; private set;
+            
         }
 
 
@@ -130,6 +136,10 @@ namespace SG
                 GestureMade = currentlyGesturing && !IsGesturing;
                 GestureStopped = IsGesturing && !currentlyGesturing;
                 IsGesturing = currentlyGesturing;
+                if (IsGesturing)
+                {
+                    Debug.Log("funny");
+                }
             }
             else
             {

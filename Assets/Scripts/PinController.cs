@@ -5,6 +5,7 @@ using UnityEngine;
 public class PinController : MonoBehaviour
 {
     public Animator pinAnimator;
+    public bool pinRemoved = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,15 @@ public class PinController : MonoBehaviour
 
     public void Unparent()
     {
-        pinAnimator.Play("BlinkOut");     
+        pinAnimator.Play("BlinkOut");
+        pinRemoved = true;
+    }
+
+    public void CumGuzzler()
+    {
+        if (pinRemoved == true)
+        {
+
+        }
     }
 }
