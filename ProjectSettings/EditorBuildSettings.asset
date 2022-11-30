@@ -8,7 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/FireExtinguisher.unity
+    guid: 35b25a185eebda749b54d9efc2553df1
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2b96667b9c7d33c4c870dac20b6d05de, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: f040cd3ab6e8b444195dc5ad0ea7bb0b, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 03ea6ae2ab0cd9a489d291585d14036d, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: c9b2540a086b40848a9a293aa0d7e376, type: 2}
