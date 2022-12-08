@@ -25,6 +25,7 @@ public class PinController : MonoBehaviour
         pinAnimator.Play("BlinkOut");
         pinRemoved = true;
         fireController.pinRemoved = true;
+        fireController.RemovePin();
     }
 
     public void CumGuzzler()

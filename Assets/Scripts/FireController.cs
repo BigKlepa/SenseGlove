@@ -20,12 +20,20 @@ public class FireController : MonoBehaviour
     private bool isFireAlive = true;
     private bool regenerating = false;
     public bool pinRemoved = false;
+    public bool isSqueezed = false;
     private int gameTime;
+
 
     [SerializeField] GameObject winScreen;
     [SerializeField] TextMeshProUGUI winText;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] SG_BasicGesture gestures;
+    [SerializeField] GameObject squeezeLimiter;
+    [SerializeField] GameObject groundExtinguisher;
+    [SerializeField] GameObject groundNozzle;
+    [SerializeField] GameObject handExtinguisher;
+    [SerializeField] GameObject handNozzle;
+    [SerializeField] Animator handleAnimator;
 
     
     // Start is called before the first frame update
@@ -58,10 +66,20 @@ public class FireController : MonoBehaviour
             if (gestures.IsGesturing)
             {
                 smokeAttackParticle.Play();
+                if (!isSqueezed)
+                {
+                    handleAnimator.SetTrigger("Squeeze");
+                }
+                isSqueezed = true;
             }
             else
             {
                 smokeAttackParticle.Stop();
+                if (isSqueezed)
+                {
+                    handleAnimator.SetTrigger("LetGo");
+                }
+                isSqueezed = false;
             }
         }
     }
@@ -111,6 +129,7 @@ public class FireController : MonoBehaviour
     public void RemovePin()
     {
         pinRemoved = true;
+        squeezeLimiter.SetActive(false);
     }
 
     public IEnumerator GameTimer()
@@ -173,5 +192,13 @@ public class FireController : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+
+    public void FireExtinguisherGrabbed()
+    {
+        groundExtinguisher.SetActive(false);
+        groundNozzle.SetActive(false);
+        handExtinguisher.SetActive(true);
+        handNozzle.SetActive(true);
+    }
     
 }
