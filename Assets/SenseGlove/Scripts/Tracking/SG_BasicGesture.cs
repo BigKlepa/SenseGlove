@@ -138,7 +138,7 @@ namespace SG
                 IsGesturing = currentlyGesturing;
                 if (IsGesturing)
                 {
-                    Debug.Log("funny");
+                    //Debug.Log("funny");
                 }
             }
             else

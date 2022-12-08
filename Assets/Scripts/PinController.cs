@@ -6,6 +6,7 @@ public class PinController : MonoBehaviour
 {
     public Animator pinAnimator;
     public bool pinRemoved = false;
+    public FireController fireController;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class PinController : MonoBehaviour
     {
         pinAnimator.Play("BlinkOut");
         pinRemoved = true;
+        fireController.pinRemoved = true;
     }
 
     public void CumGuzzler()

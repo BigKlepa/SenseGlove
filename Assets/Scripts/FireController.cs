@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.SceneManagement;
+using SG;
 
 public class FireController : MonoBehaviour
 {
@@ -18,11 +19,13 @@ public class FireController : MonoBehaviour
     private bool isFireBig = false;
     private bool isFireAlive = true;
     private bool regenerating = false;
+    public bool pinRemoved = false;
     private int gameTime;
 
     [SerializeField] GameObject winScreen;
     [SerializeField] TextMeshProUGUI winText;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] SG_BasicGesture gestures;
 
     
     // Start is called before the first frame update
@@ -49,6 +52,17 @@ public class FireController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             ResetScene();
+        }
+        if (pinRemoved)
+        {
+            if (gestures.IsGesturing)
+            {
+                smokeAttackParticle.Play();
+            }
+            else
+            {
+                smokeAttackParticle.Stop();
+            }
         }
     }
 
@@ -92,6 +106,11 @@ public class FireController : MonoBehaviour
         biggerSmokeParticle.Stop();
         GameWon();
         StartCoroutine(WinTimer());
+    }
+
+    public void RemovePin()
+    {
+        pinRemoved = true;
     }
 
     public IEnumerator GameTimer()

@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: Handle
   m_EditorClassIdentifier: 
   maxForce: 1
-  maxForceDist: 0.1
+  maxForceDist: 0.5
   forceRepsonse:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 4.0052714
-      outSlope: 4.0052714
+      inSlope: 1.721872
+      outSlope: 1.721872
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.25094995
-      value: 1.0051227
+      time: 0.52178586
+      value: 0.89844847
       inSlope: -0.0074466
       outSlope: -0.0074466
       tangentMode: 0
@@ -36,10 +36,10 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.5871376
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: -0.0068388777
-      outSlope: -0.0068388777
+      time: 1.0125122
+      value: 0.89569473
+      inSlope: -0.005611548
+      outSlope: -0.005611548
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
